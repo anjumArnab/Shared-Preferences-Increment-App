@@ -9,10 +9,6 @@ A simple Flutter app that utilizes SharedPreferences, Provider for state managem
 - **State Management**: Uses `Provider` for state management to handle the tilt angle and counter values.
 - **Persistence**: The counter value is saved using `SharedPreferences` to retain the data between app sessions.
 
-## Demo
-
-![Tilt Increment Counter](assets/demo.gif) *(add demo GIF here if needed)*
-
 ## Installation
 
 1. Clone the repository:
