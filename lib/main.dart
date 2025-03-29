@@ -51,7 +51,7 @@ class CounterProvider extends ChangeNotifier {
   }
 
   void _updateTilt(double delta) {
-    _angle += delta * 0.03;
+    _angle += delta * 0.03; // Adjust the multiplier to control sensitivity
     if (_angle.abs() >= 2 * 3.141592653589793) {
       _angle = 0.0;
     }
