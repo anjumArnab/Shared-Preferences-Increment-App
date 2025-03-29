@@ -50,14 +50,15 @@ class CounterProvider extends ChangeNotifier {
     pref.setInt("counter", _counter);
   }
 
-  void updateTilt(double delta) {
-    _angle += delta * 0.1;
-    if (_angle > 0.1) {
+  void _updateTilt(double delta) {
+    _angle += delta * 0.03;
+    if (_angle.abs() >= 2 * 3.141592653589793) {
+      _angle = 0.0;
+    }
+    if (delta < 0) {
       _counter++;
-      _angle = 0.0;
-    } else if (_angle < -0.1) {
+    } else {
       _counter--;
-      _angle = 0.0;
     }
     _saveCounter();
     notifyListeners();
@@ -93,7 +94,7 @@ class MyHomePage extends StatelessWidget {
           Center(
             child: GestureDetector(
               onHorizontalDragUpdate: (details) =>
-                  counterProvider.updateTilt(details.delta.dx),
+                  counterProvider._updateTilt(details.delta.dx),
               child: Transform.rotate(
                 angle: counterProvider.angle,
                 child: Container(
