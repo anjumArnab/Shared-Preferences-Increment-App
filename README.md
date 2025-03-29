@@ -1,17 +1,20 @@
-# Shared Preferences Counter App
+# Tilt Increment Counter
 
-This is a Flutter project demonstrating the use of the `shared_preferences` package to persist data locally. The app displays a counter, which increments every time a button is pressed, and retains the counter value even after restarting the app.
+A simple Flutter app that utilizes SharedPreferences, Provider for state management, and gesture detection to increment and decrement a counter based on user tilting the box. The counter increases when you tilt the box to the left and decreases when you tilt it to the right.
 
 ## Features
 
-- **State Persistence**: Counter value is saved using `shared_preferences` and is loaded when the app starts.
-- **Material Design**: Utilizes Material 3 and a color scheme generated from a seed color (`Colors.deepPurple`).
-- **Responsive UI**: Displays the counter in a clean, centered layout.
+- **Counter**: Displays the number of times the box has been tilted.
+- **Gesture Detection**: The box's position and rotation are adjusted based on the horizontal drag.
+- **State Management**: Uses `Provider` for state management to handle the tilt angle and counter values.
+- **Persistence**: The counter value is saved using `SharedPreferences` to retain the data between app sessions.
 
----
+## Demo
 
-## Project Structure
+![Tilt Increment Counter](assets/demo.gif) *(add demo GIF here if needed)*
 
-```plaintext
-lib/
-├── main.dart   // Contains the main app logic and UI
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/anjumArnab/Tilt-Increment-Counter.git
