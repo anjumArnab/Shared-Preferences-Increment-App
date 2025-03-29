@@ -23,7 +23,7 @@ class TiltCounter extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
-      home: const MyHomePage(title: 'Tilt Counter'),
+      home: const HomePage(title: 'Tilt Counter'),
     );
   }
 }
@@ -65,8 +65,8 @@ class CounterProvider extends ChangeNotifier {
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key, required this.title});
 
   final String title;
 
@@ -76,8 +76,6 @@ class MyHomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        centerTitle: true,
         title: Text(title),
       ),
       body: Column(
@@ -90,7 +88,7 @@ class MyHomePage extends StatelessWidget {
             '${counterProvider.counter}',
             style: Theme.of(context).textTheme.headlineMedium,
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 50),
           Center(
             child: GestureDetector(
               onHorizontalDragUpdate: (details) =>
